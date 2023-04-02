@@ -40,6 +40,7 @@ public class DemoController {
     private @NonNull List<DemoId> demoId = List.of();
   }
 
+  // TODO move to global class
   @Component
   public static class DemoIdConverter implements Converter<String, DemoId> {
     @Override
