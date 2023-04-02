@@ -3,8 +3,11 @@ package com.example.demo.presentation;
 import com.example.demo.domain.Demo;
 import com.example.demo.domain.DemoId;
 import com.example.demo.usecase.DemoUseCase;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import java.beans.ConstructorProperties;
 import java.util.List;
 import lombok.Data;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
@@ -34,7 +37,7 @@ public class DemoController {
 
   @Data
   public static class ListDemoRequest {
-    private List<DemoId> demoId;
+    private @NonNull List<DemoId> demoId = List.of();
   }
 
   @Component
