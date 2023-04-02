@@ -32,6 +32,11 @@ public class NormalizeParameterBinder {
                           propertyValues.add(
                               CaseFormat.LOWER_HYPHEN.to(CaseFormat.LOWER_CAMEL, name), value));
             });
+
+    if (propertyValues.isEmpty()) {
+      return;
+    }
+
     binder.bind(propertyValues);
   }
 }
