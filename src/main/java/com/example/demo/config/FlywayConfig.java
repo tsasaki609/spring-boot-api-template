@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.config;
 
 import javax.sql.DataSource;
 import org.flywaydb.core.Flyway;
@@ -10,6 +10,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 @Configuration
 public class FlywayConfig {
 
+  // TODO use only local
   @Bean
   public DataSource dataSource() {
     return new EmbeddedDatabaseBuilder()
