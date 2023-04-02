@@ -26,7 +26,7 @@ public class DemoController {
 
   @GetMapping("/{demo-id}")
   public Mono<Demo> get(@PathVariable("demo-id") DemoId id) {
-    var result =  demoUseCase.findById(id);
+    final var result =  demoUseCase.findById(id);
     return result;
   }
 
