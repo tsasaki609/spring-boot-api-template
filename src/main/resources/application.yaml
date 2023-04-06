@@ -1,11 +1,13 @@
 spring:
   r2dbc:
-    url: r2dbc:h2:mem:///testdb
+#    url: r2dbc:h2:mem:///testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;
+    url: r2dbc:h2:file:////tmp/testdb
     username: sa
     password:
   flyway:
     # オプションなしだとH2 Consoleがバグる
-    url: jdbc:h2:mem:///testdb;DB_CLOSE_DELAY=-1
+#    url: jdbc:h2:mem:///testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;
+    url: jdbc:h2:file:////tmp/testdb
     user: sa
     password:
     locations: classpath:db/migration

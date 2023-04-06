@@ -2,7 +2,7 @@ package com.example.usecase;
 
 import com.example.domain.Example;
 import com.example.domain.ExampleId;
-import com.example.infrastructure.ExampleRepository;
+import com.example.domain.repository.ExampleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

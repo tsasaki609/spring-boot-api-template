@@ -7,8 +7,6 @@ import java.util.List;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.core.convert.converter.Converter;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,14 +34,5 @@ public class ExampleController {
   @Data
   public static class ListExampleRequest {
     private @NonNull List<ExampleId> exampleId = List.of();
-  }
-
-  // TODO move to global class
-  @Component
-  public static class ExampleIdConverter implements Converter<String, ExampleId> {
-    @Override
-    public ExampleId convert(String source) {
-      return new ExampleId(Integer.parseInt(source));
-    }
   }
 }
