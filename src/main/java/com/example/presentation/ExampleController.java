@@ -9,6 +9,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
@@ -22,13 +23,22 @@ public class ExampleController {
 
   @GetMapping("/{example-id}")
   public Mono<Example> get(@PathVariable("example-id") ExampleId id) {
-    final var result = exampleUseCase.findById(id);
-    return result;
+    return exampleUseCase.findById(id);
   }
 
   @GetMapping
   public Flux<Example> list(ListExampleRequest request) {
     return exampleUseCase.findByAllId(request.getExampleId());
+  }
+
+  @PostMapping
+  public Mono<Example> create(Example example) {
+    return Mono.empty();
+  }
+
+  @PostMapping("/{example-id}")
+  public Mono<Example> update(Example example) {
+    return Mono.empty();
   }
 
   @Data
