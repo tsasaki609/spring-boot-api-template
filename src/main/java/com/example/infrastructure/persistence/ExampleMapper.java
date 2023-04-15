@@ -4,7 +4,7 @@ import com.example.domain.Example;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", implementationName = "PersistenceExampleMapperImpl")
 public interface ExampleMapper {
 
   @Mapping(source = "id.value", target = "id")

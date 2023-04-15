@@ -6,7 +6,7 @@ import com.example.presentation.ExampleController.ExampleResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", implementationName = "PresentationExampleMapperImpl")
 public interface ExampleMapper {
   @Mapping(source = "id", target = "id.value")
   @Mapping(source = "property1", target = "property1.value")
